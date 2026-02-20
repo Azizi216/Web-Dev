@@ -1,0 +1,79 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;  
+    align-items: center;
+    min-height: 100vh;            
+    width: 100%;
+}
+*{
+    margin: 0px;
+}
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 10px;
+    width: 100%;
+    font-size: 14px;
+
+    align-items: start;   
+}
+.product-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;  
+    height: 140px;
+    border-radius: 6px;
+    box-shadow: 1px 1px 6px gray;
+    width: 260px;
+    padding: 10px;
+    font-size: 12px;
+}
+.product-image{
+    width: 110px;
+    height: 80px;
+    object-fit:contain;
+}
+.price {
+    font-weight: bold;
+    color: green;
+}
+.rating{
+    color: #ffa500;
+}
+#body_down{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-around;
+    gap: 20px;
+}
+#product_body{
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+}
+#down_side button{
+    width: 60px;
+    height: 20px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: white;
+    background-color: red;
+    border: none;
+}
+#down_side{
+    display: flex;
+    justify-content: space-between;
+}
+#down_side button:hover{
+    transform: scale(0.95);
+    cursor: pointer;
+    background-color: rgb(109, 6, 6);
+}
+#down_side button:active{
+    transform: scale(0.93);
+    cursor: pointer;
+    background-color: rgb(255, 22, 22);
+}
