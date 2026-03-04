@@ -1,0 +1,47 @@
+<div class="detail-container">
+
+  <!-- Loading -->
+  <div class="loading" *ngIf="loading">
+    <div class="spinner"></div>
+    <p>Loading album...</p>
+  </div>
+
+  <!-- Error -->
+  <div class="error-banner" *ngIf="error && !loading">
+    <span>⚠️ {{ error }}</span>
+    <button class="btn-retry" (click)="loadAlbum()">Retry</button>
+  </div>
+
+  <!-- Album Card -->
+  <div class="detail-card" *ngIf="!loading && album">
+    <div class="detail-header">
+      <span class="album-id">#{{ album.id }}</span>
+      <h1>{{ album.title }}</h1>
+      <p class="user-id">👤 User ID: {{ album.userId }}</p>
+    </div>
+
+    <!-- Success Message -->
+    <div class="success-msg" *ngIf="saveSuccess">
+      ✅ Album title updated successfully!
+    </div>
+
+    <div class="edit-section">
+      <label>Edit Album Title</label>
+      <input
+        type="text"
+        [(ngModel)]="editTitle"
+        placeholder="Enter new title"
+        [disabled]="saving"
+      />
+      <button class="btn-save" (click)="saveAlbum()" [disabled]="saving || !editTitle.trim()">
+        {{ saving ? 'Saving...' : 'Save' }}
+      </button>
+    </div>
+
+    <div class="actions">
+      <button class="btn-photos" (click)="viewPhotos()">📷 View Photos</button>
+      <button class="btn-back" (click)="goBack()">← Back to Albums</button>
+    </div>
+  </div>
+
+</div>

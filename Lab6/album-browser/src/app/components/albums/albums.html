@@ -1,0 +1,21 @@
+<div class="albums-container">
+  <h1>All Albums</h1>
+
+  <div class="loading" *ngIf="loading">
+    <div class="spinner"></div>
+    <p>Loading albums...</p>
+  </div>
+
+  <div class="albums-grid" *ngIf="!loading">
+    <div
+      class="album-card"
+      *ngFor="let album of albums"
+      (click)="goToDetail(album.id)">
+      <div class="album-info">
+        <span class="album-id">#{{ album.id }}</span>
+        <p class="album-title">{{ album.title }}</p>
+      </div>
+      <button class="btn-delete" (click)="deleteAlbum($event, album.id)">Delete</button>
+    </div>
+  </div>
+</div>
