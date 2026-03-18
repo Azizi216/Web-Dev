@@ -1,0 +1,17 @@
+arr = []
+
+for i in range(4):
+    element = int(input("Please insert a number: "))
+    arr.append(element)
+
+def smallest_integer(numbers):
+   
+    minimum = float('inf')
+    for num in numbers:
+        if num < minimum:
+            minimum = num
+    return minimum
+
+
+minimum_value = smallest_integer(arr)
+print("The smallest number is:", minimum_value)
